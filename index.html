@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to my quiz</h1>
+
+<script>
+    let name =prompt('ENTER YOUR NAME:')
+console.log(`Do you know me? ${name}`)
+
+let score=0;
+
+let questions=[{
+  ques:'Where you live?',
+  answer:'lahore'
+},
+{
+  ques:'Pakistan Capital?',
+  answer:'Islamabad'
+},
+{
+  ques:'Champion of cwc19',
+  answer:'England'
+},
+{
+ques:'CWC23 held in which country?',
+answer:'India'
+}
+]
+function play(question,answer) {
+  var userAnswer= prompt(question);
+  if (userAnswer.toUpperCase()===answer.toUpperCase()){
+    console.log(`right! ${answer}`)
+    score=score+1;
+  }
+  else{
+    console.log(`Wrong! ${answer}`)
+    score=score-1;
+  }
+  
+}
+  for(var i=0;i<questions.length ;i++){
+    var currentQues=questions[i]
+    play(currentQues.ques,currentQues.answer)
+
+  }
+  let totalScore=score;
+  console.log(`Your total score is: ${totalScore}`)
+</script>
+</body>
+</html>
